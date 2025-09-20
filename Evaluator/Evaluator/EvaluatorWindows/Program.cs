@@ -1,4 +1,4 @@
-namespace Evaluator.windows
+namespace EvaluatorWindows
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Evaluator.windows
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new btn7());
+            Application.Run(new Calculator());
         }
     }
 }
