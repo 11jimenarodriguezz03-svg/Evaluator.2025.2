@@ -18,7 +18,6 @@
             {
                 if (char.IsDigit(item) || item == '.')
                 {
-                    // Acumular dígitos o punto decimal
                     number += item;
                 }
                 else
