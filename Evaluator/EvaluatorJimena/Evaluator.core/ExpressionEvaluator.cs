@@ -24,7 +24,7 @@
                 {
                     if (number.Length > 0)
                     {
-                        postfix += number + " "; // agregar número completo
+                        postfix += number + " ";
                         number = string.Empty;
                     }
 
@@ -36,7 +36,7 @@
                             {
                                 postfix += stack.Pop() + " ";
                             }
-                            stack.Pop(); // quitar el '('
+                            stack.Pop();
                         }
                         else
                         {
