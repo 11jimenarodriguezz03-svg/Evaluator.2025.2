@@ -32,15 +32,17 @@
                     {
                         if (item == ')')
                         {
-                            while (stack.Peek() != '(')
+                            while (stack.Count > 0 && stack.Peek() != '(')
                             {
                                 postfix += stack.Pop() + " ";
                             }
-                            stack.Pop();
+                            if (stack.Count > 0 && stack.Peek() == '(')
+                                stack.Pop();
                         }
                         else
                         {
-                            while (stack.Count > 0 && PriorityInfix(item) <= PriorityStack(stack.Peek()))
+                            while (stack.Count > 0 && item != '(' &&
+                                   PriorityInfix(item) <= PriorityStack(stack.Peek()))
                             {
                                 postfix += stack.Pop() + " ";
                             }
@@ -102,7 +104,7 @@
                 }
             }
 
-            return stack.Peek();
+            return stack.Pop();
         }
 
         private static double Calulate(double op1, char item, double op2) => item switch
